@@ -1,0 +1,23 @@
+2022-08-24 12:52:59,467 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Configure stats pid to 8526
+2022-08-24 12:52:59,467 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Loading settings from /home/baos1/.config/wandb/settings
+2022-08-24 12:52:59,467 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Loading settings from /data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/wandb/settings
+2022-08-24 12:52:59,468 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-08-24 12:52:59,468 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program': 'train.py'}
+2022-08-24 12:52:59,468 INFO    MainThread:8526 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2022-08-24 12:52:59,468 INFO    MainThread:8526 [wandb_init.py:_log_setup():461] Logging user logs to /data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/wandb/offline-run-20220824_125259-d1j1ulhc/logs/debug.log
+2022-08-24 12:52:59,468 INFO    MainThread:8526 [wandb_init.py:_log_setup():462] Logging internal logs to /data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/wandb/offline-run-20220824_125259-d1j1ulhc/logs/debug-internal.log
+2022-08-24 12:52:59,469 INFO    MainThread:8526 [wandb_init.py:init():495] calling init triggers
+2022-08-24 12:52:59,471 INFO    MainThread:8526 [wandb_init.py:init():499] wandb.init called with sweep_config: {}
+config: {'dataroot': './datasets/horse2zebra', 'name': 'horse2zebra', 'use_wandb': True, 'gpu_ids': [0], 'checkpoints_dir': './checkpoints', 'model': 'cycle_gan', 'input_nc': 3, 'output_nc': 3, 'ngf': 64, 'ndf': 64, 'netD': 'basic', 'netG': 'resnet_9blocks', 'n_layers_D': 3, 'norm': 'instance', 'init_type': 'normal', 'init_gain': 0.02, 'no_dropout': True, 'dataset_mode': 'unaligned', 'direction': 'AtoB', 'serial_batches': False, 'num_threads': 4, 'batch_size': 1, 'load_size': 286, 'crop_size': 256, 'max_dataset_size': inf, 'preprocess': 'resize_and_crop', 'no_flip': False, 'display_winsize': 256, 'epoch': 'latest', 'load_iter': 0, 'verbose': False, 'suffix': '', 'display_freq': 400, 'display_ncols': 4, 'display_id': 1, 'display_server': 'http://localhost', 'display_env': 'main', 'display_port': 8097, 'update_html_freq': 1000, 'print_freq': 100, 'no_html': False, 'save_latest_freq': 5000, 'save_epoch_freq': 5, 'save_by_iter': False, 'continue_train': False, 'epoch_count': 1, 'phase': 'train', 'n_epochs': 100, 'n_epochs_decay': 100, 'beta1': 0.5, 'lr': 0.0002, 'gan_mode': 'lsgan', 'pool_size': 50, 'lr_policy': 'linear', 'lr_decay_iters': 50, 'lambda_A': 10.0, 'lambda_B': 10.0, 'lambda_identity': 0.5, 'isTrain': True}
+2022-08-24 12:52:59,471 INFO    MainThread:8526 [wandb_init.py:init():548] starting backend
+2022-08-24 12:52:59,471 INFO    MainThread:8526 [wandb_init.py:init():552] setting up manager
+2022-08-24 12:52:59,489 INFO    MainThread:8526 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-08-24 12:52:59,509 INFO    MainThread:8526 [wandb_init.py:init():558] backend started and connected
+2022-08-24 12:52:59,527 INFO    MainThread:8526 [wandb_init.py:init():636] updated telemetry
+2022-08-24 12:52:59,697 INFO    MainThread:8526 [wandb_init.py:init():700] starting run threads in backend
+2022-08-24 12:53:04,763 INFO    MainThread:8526 [wandb_run.py:_console_start():1962] atexit reg
+2022-08-24 12:53:04,764 INFO    MainThread:8526 [wandb_run.py:_redirect():1820] redirect: SettingsConsole.WRAP_RAW
+2022-08-24 12:53:04,765 INFO    MainThread:8526 [wandb_run.py:_redirect():1885] Wrapping output streams.
+2022-08-24 12:53:04,765 INFO    MainThread:8526 [wandb_run.py:_redirect():1907] Redirects installed.
+2022-08-24 12:53:04,766 INFO    MainThread:8526 [wandb_init.py:init():732] run started, returning control to user process
+2022-08-24 13:28:22,816 WARNING MsgRouterThr:8526 [router.py:message_loop():76] message_loop has been closed

@@ -1,0 +1,32 @@
+{
+    "os": "Linux-5.4.0-124-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-08-24T17:52:59.774718",
+    "startedAt": "2022-08-24T17:52:59.449549",
+    "docker": null,
+    "gpu": "NVIDIA TITAN Xp",
+    "gpu_count": 2,
+    "cpu_count": 20,
+    "cuda": null,
+    "args": [
+        "--dataroot",
+        "./datasets/horse2zebra",
+        "--name",
+        "horse2zebra",
+        "--model",
+        "cycle_gan",
+        "--use_wandb"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/onealbao/pytorch-CycleGAN-and-pix2pix.git",
+        "commit": "9bcef69d5b39385d18afad3d5a839a02ae0b43e7"
+    },
+    "email": "onealbao@gmail.com",
+    "root": "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix",
+    "host": "VUSELNX-98R4CP2.vuds.vanderbilt.edu",
+    "username": "baos1",
+    "executable": "/data/baos1/anaconda3/envs/cyclegan/bin/python"
+}
