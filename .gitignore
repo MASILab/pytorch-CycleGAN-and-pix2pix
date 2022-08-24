@@ -1,6 +1,7 @@
 .DS_Store
-.pyc
-.ipynb_checkpoints
+*.pth
+*.pyc
+*.ipynb_checkpoints
 *png
 *jpeg
 *jpg
