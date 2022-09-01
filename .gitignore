@@ -2,6 +2,7 @@
 *.pth
 *.pyc
 *.ipynb_checkpoints
+*html
 *png
 *jpeg
 *jpg
