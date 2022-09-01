@@ -59,11 +59,22 @@ class UnalignedDataset(BaseDataset):
             index_B = random.randint(0, self.B_size - 1)
         B_path = self.B_paths[index_B]
         A_img = Image.open(A_path).convert('RGB')
+
+        
+        opencvImage = cv2.cvtColor(np.array(A_img), cv2.COLOR_RGB2BGR)
+        (B, G, R) = cv2.split(opencvImage)
+        G_empty = np.zeros_like(B)
+        
+        
+        A_rgb_to_save = cv2.merge((R,G_empty,B))
+
+        A_no_G = Image.fromarray(A_rgb_to_save)
+
         B_img = Image.open(B_path).convert('RGB')
 
         
         # apply image transformation
-        A = self.transform_A(A_img)
+        A = self.transform_A(A_no_G)
         B = self.transform_B(B_img)
 
         return {'A': A, 'B': B, 'A_paths': A_path, 'B_paths': B_path}

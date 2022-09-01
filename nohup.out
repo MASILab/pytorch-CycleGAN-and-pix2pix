@@ -1,0 +1,1970 @@
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/200/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/190/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/180/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/170/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/160/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/150/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/140/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/130/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/120/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/110/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+ln: failed to access 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/100/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/200/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/190/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/180/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/170/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/160/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/150/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/140/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/130/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/120/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/110/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/100/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+Traceback (most recent call last):
+  File "test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/data/baos1/GCA/dailyCode/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 192, in load_networks
+    state_dict = torch.load(load_path, map_location=str(self.device))
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/baos1/anaconda3/envs/cyclegan/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/mxif2he/latest_net_G.pth'
+rm: cannot remove 'checkpoints/mxif2he/latest_net_G.pth': No such file or directory
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/200/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/200/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/190/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/190/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/180/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/180/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/170/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/170/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/160/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/160/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/150/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/150/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/140/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/140/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/130/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/130/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/120/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/120/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/110/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/110/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: datasets/mxif2he/testA        	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: mxif2he                       	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: False                         
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+               preprocess: resize_and_crop               
+              results_dir: ./results/mxif2he/100/        	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from ./checkpoints/mxif2he/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.378 M
+-----------------------------------------------
+creating web directory ./results/mxif2he/100/mxif2he/test_latest
+processing (0000)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_12.png']
+processing (0005)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_10_17.png']
+processing (0010)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_14.png']
+processing (0015)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_11_31.png']
+processing (0020)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_12_30.png']
+processing (0025)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_13_31.png']
+processing (0030)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_12.png']
+processing (0035)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_15_17.png']
+processing (0040)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_12.png']
+processing (0045)-th image... ['datasets/mxif2he/testA/GCA011ACB_ALL_IN_IHE_ROI_crop256_16_17.png']
