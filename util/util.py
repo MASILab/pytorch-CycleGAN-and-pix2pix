@@ -25,6 +25,56 @@ def tensor2im(input_image, imtype=np.uint8):
     else:  # if it is a numpy array, do nothing
         image_numpy = input_image
     return image_numpy.astype(imtype)
+    
+    
+#def tensor2markers(image_tensor, imtype=np.uint8, normalize=True):
+def tensor2markers(image_tensor, imtype=np.uint8):
+    image_numpy_tmp = image_tensor.cpu().float().numpy()
+ #   print(image_numpy_tmp.shape)
+    #if normalize:
+    image_numpy = (np.transpose(image_numpy_tmp[0], (1, 2, 0)) + 1) / 2.0 * 255.0
+    #else:
+    #    image_numpy = np.transpose(image_numpy, (1, 2, 0)) * 255.0
+    image_numpy = np.clip(image_numpy, 0, 255)
+
+    to_print = []
+    for i in range(0,27):
+        to_print.append(image_numpy[:,:,i])
+
+    final_hope_markers = np.hstack(to_print)
+    return final_hope_markers.astype(imtype)
+    
+def tensor2markersDetach(image_tensor, imtype=np.uint8):
+    image_numpy_tmp = image_tensor.cpu().float().detach().numpy()
+ #   print(image_numpy_tmp.shape)
+    #if normalize:
+    image_numpy = (np.transpose(image_numpy_tmp[0], (1, 2, 0)) + 1) / 2.0 * 255.0
+    #else:
+    #    image_numpy = np.transpose(image_numpy, (1, 2, 0)) * 255.0
+    image_numpy = np.clip(image_numpy, 0, 255)
+
+    to_print = []
+    for i in range(0,27):
+        to_print.append(image_numpy[:,:,i])
+
+    final_hope_markers = np.hstack(to_print)
+    return final_hope_markers.astype(imtype)
+    
+def tensor2markers2Web(image_tensor, imtype=np.uint8):
+    image_numpy_tmp = image_tensor.cpu().float().numpy()
+    #if normalize:
+    image_numpy = (np.transpose(image_numpy_tmp[0], (1, 2, 0)) + 1) / 2.0 * 255.0
+    #else:
+    #    image_numpy = np.transpose(image_numpy, (1, 2, 0)) * 255.0
+    image_numpy = np.clip(image_numpy, 0, 255)
+
+    to_print = []
+    to_print.append(image_numpy[:,:,12]) # DAPI
+    to_print.append(image_numpy[:,:,17]) # Muc2
+    to_print.append(image_numpy[:,:,2]) # BCAT
+    
+    final_hope_markers = np.hstack(to_print)
+    return final_hope_markers.astype(imtype)
 
 
 def diagnose_network(net, name='network'):
@@ -55,7 +105,14 @@ def save_image(image_numpy, image_path, aspect_ratio=1.0):
     """
 
     image_pil = Image.fromarray(image_numpy)
-    h, w, _ = image_numpy.shape
+    
+    print(image_numpy.shape)
+    
+    if len(image_numpy.shape) == 2:
+        h, w = image_numpy.shape
+    
+    else:
+        h, w, _ = image_numpy.shape
 
     if aspect_ratio > 1.0:
         image_pil = image_pil.resize((h, int(w * aspect_ratio)), Image.BICUBIC)

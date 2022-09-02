@@ -87,7 +87,7 @@ def split_MXIF(sample_id,patch_size, marker_list):
     for i in range (0,xUpper):
         print('i:%d' % i)
         for j in range (0,yUpper):
-            print('j:%d' % j)
+#             print('j:%d' % j)
             tmp_img_list = []
             
             for marker in marker_list:
@@ -113,6 +113,68 @@ def split_MXIF(sample_id,patch_size, marker_list):
             tmp_file_name = '%s/patch/%s/%s_ALL_CHANNEL_%s_%s.png' % (src_dir,sample_id,sample_id,i,j) 
             imgs_comb = Image.fromarray( imgs_comb)
             imgs_comb.save( tmp_file_name, 'PNG')             
+
+def split_MXIF_marker(sample_id,patch_size, marker):    
+    src_dir = '/mnt/1T/baos1/GCA/data/MXIF/cyclegan/mxif_in_ihe_space/roi/crop256'
+    target_dir = '/mnt/1T/baos1/GCA/data/MXIF/cyclegan/mxif_in_ihe_space/roi/crop256/tmp'
+    suffix = '%s_masked_IN_IHE_ROI_crop256' % marker
+    raw_img_path = '%s/%s_%s.tif' % (src_dir,sample_id,suffix) 
+    img = Image.open(raw_img_path)
+    w,h = img.size
+
+    xUpper = math.ceil((w)/patch_size)
+    #yUpper = math.ceil((h-500)/patch_size)
+    yUpper = math.ceil(h/patch_size) # no need to minus 500...
+    # for i in range (0,curX-1):
+    #     for j in range (0,yUpper-1):
+    for i in range (0,xUpper):
+        print('i:%d' % i)
+        for j in range (0,yUpper):
+#             print('j:%d' % j)
+            curX = 0 + i * patch_size
+            curY = 0 + j * patch_size
+            targetX = curX + patch_size
+            targetY = curY + patch_size
+            img_cropped = img.crop((curX, curY, targetX, targetY))
+
+            tmp_img_path = '%s/%s_%s_%s_%s.tif' % (target_dir,sample_id,suffix,i,j) 
+            img_cropped.save( tmp_img_path, 'PNG')   
+
+def split_MXIF_merge(sample_id,patch_size, marker_list):    
+    src_dir = '/mnt/1T/baos1/GCA/data/MXIF/cyclegan/mxif_in_ihe_space/roi/crop256'
+    target_dir = '/mnt/1T/baos1/GCA/data/MXIF/cyclegan/mxif_in_ihe_space/roi/crop256/tmp'
+    
+    imgs = []
+    for marker in marker_list:
+        suffix = '%s_masked_IN_IHE_ROI_crop256' % marker
+        raw_img_path = '%s/%s_%s.tif' % (src_dir,sample_id,suffix) 
+        img = Image.open(raw_img_path)
+        imgs.append(img)
+        break    
+    w,h = imgs[0].size
+    
+    xUpper = math.ceil((w)/patch_size)
+    #yUpper = math.ceil((h-500)/patch_size)
+    yUpper = math.ceil(h/patch_size) # no need to minus 500...
+    # for i in range (0,curX-1):
+    #     for j in range (0,yUpper-1):
+    for i in range (0,xUpper):
+        print('i:%d' % i)
+        for j in range (0,yUpper):
+#             print('j:%d' % j)
+            tmp_img_list = []
+            
+            for marker in marker_list:
+                suffix = '%s_masked_IN_IHE_ROI_crop256' % marker
+                raw_img_path = '%s/%s_%s_%s_%s.tif' % (target_dir,sample_id,suffix,i,j) 
+                img = Image.open(raw_img_path)
+                tmp_img_list.append(img)
+        
+            imgs_comb = np.hstack((np.asarray(train_img) for train_img in tmp_img_list ) )
+
+            tmp_file_name = '%s/patch/%s/%s_ALL_CHANNEL_%s_%s.png' % (src_dir,sample_id,sample_id,i,j) 
+            imgs_comb = Image.fromarray( imgs_comb)
+            imgs_comb.save( tmp_file_name, 'PNG')           
             
 marker_list = ['ACTG1','ACTININ','BCATENIN','CD11B','CD20','CD3D','CD45','CD4','CD68','CD8','CGA','COLLAGEN','DAPI','ERBB2','FOXP3','HLAA','LYSOZYME','MUC2','NAKATPASE','OLFM4','PANCK','PCNA','PEGFR','PSTAT3','SMA','SOX9','VIMENTIN']
 
@@ -120,43 +182,57 @@ marker_list = ['ACTG1','ACTININ','BCATENIN','CD11B','CD20','CD3D','CD45','CD4','
 # preprocess_ALL(sample_list,marker_list)
 
 
-nested_dict2 = {'GCA004TIB': {'x_size':0.3243017666392769 ,'y_size':0.32411196307600687,'x':0,'y':0,'w':10956,'h':8645}}
+# nested_dict2 = {'GCA004TIB': {'x_size':0.3243017666392769 ,'y_size':0.32411196307600687,'x':0,'y':0,'w':10956,'h':8645}}
 
 
 
-def preprocess_ALL2(sample_list,marker_list):
-    for sample_id in sample_list:
-        for marker in  marker_list:
-            print(marker)
-            mask_mxif(sample_id,marker)
-#             resize_mxif_to_ihe_space(x_size,y_size,sample_id,marker)
-            resize_mxif_to_ihe_space(nested_dict2[sample_id]['x_size'] ,nested_dict2[sample_id]['y_size'],sample_id,marker)
-#             roi_MXIF(sample_id,marker,x,y,w,h)
-            roi_MXIF(sample_id,marker, nested_dict2[sample_id]['x'],nested_dict2[sample_id]['y'],nested_dict2[sample_id]['w'],nested_dict2[sample_id]['h'])
-#             crop256_MXIF('GCA002ACB', 7956, 5292)
-            crop256_MXIF(sample_id,marker, nested_dict2[sample_id]['w'],nested_dict2[sample_id]['h'])
-    
-        patch_size = 256
-        split_MXIF(sample_id,patch_size, marker_list)
         
-*sample_list, = nested_dict2
-preprocess_ALL2(sample_list,marker_list)
-
-def preprocess_ALL(sample_list,marker_list):
+def preprocess_ALL_HOPE(sample_list,marker_list):
+    patch_size = 256
     for sample_id in sample_list:
         for marker in  marker_list:
             print(marker)
+            split_MXIF_marker(sample_id,patch_size, marker)
+
+        patch_size = 256
+        split_MXIF_merge(sample_id,patch_size, marker_list)
+
+nested_dict2 = {'GCA004TIB': {'x_size':0.3243017666392769 ,'y_size':0.32411196307600687,'x':0,'y':0,'w':10956,'h':8645}, 'GCA003TIB': {'x_size':0.3243145161290323 ,'y_size':0.32412004992079874,'x':96,'y':640,'w':8320,'h':12144},'GCA011TIB': {'x_size': 0.32430687474077147,'y_size':0.3241229633959231,'x':7584,'y':1812,'w':4224,'h':6072}, 'GCA011ACB': {'x_size': 0.32430597077244255,'y_size':0.3241287986704653,'x':0,'y':0,'w':15423,'h':10843}}
+
+*sample_list, = nested_dict2
+preprocess_ALL_HOPE(sample_list,marker_list)
+
+
+
+# def preprocess_ALL2(sample_list,marker_list):
+#     for sample_id in sample_list:
+#         for marker in  marker_list:
+#             print(marker)
 #             mask_mxif(sample_id,marker)
 # #             resize_mxif_to_ihe_space(x_size,y_size,sample_id,marker)
-#             resize_mxif_to_ihe_space(0.32430937910244567 ,0.32411575385040403,sample_id,marker)
+#             resize_mxif_to_ihe_space(nested_dict2[sample_id]['x_size'] ,nested_dict2[sample_id]['y_size'],sample_id,marker)
 # #             roi_MXIF(sample_id,marker,x,y,w,h)
-#             roi_MXIF(sample_id,marker, 5028,3480,7956,5292)
+#             roi_MXIF(sample_id,marker, nested_dict2[sample_id]['x'],nested_dict2[sample_id]['y'],nested_dict2[sample_id]['w'],nested_dict2[sample_id]['h'])
 # #             crop256_MXIF('GCA002ACB', 7956, 5292)
-#             crop256_MXIF(sample_id,marker, 7956, 5292)
+#             crop256_MXIF(sample_id,marker, nested_dict2[sample_id]['w'],nested_dict2[sample_id]['h'])
+    
+#         patch_size = 256
+#         split_MXIF(sample_id,patch_size, marker_list)
+        
+# # *sample_list, = nested_dict2
+# # preprocess_ALL2(sample_list,marker_list)
 
-        patch_size = 256
-        split_MXIF(sample_id,patch_size, marker_list)
+# def preprocess_ALL(sample_list,marker_list):
+#     for sample_id in sample_list:
+#         for marker in  marker_list:
+#             print(marker)
+# #             mask_mxif(sample_id,marker)
+# # #             resize_mxif_to_ihe_space(x_size,y_size,sample_id,marker)
+# #             resize_mxif_to_ihe_space(0.32430937910244567 ,0.32411575385040403,sample_id,marker)
+# # #             roi_MXIF(sample_id,marker,x,y,w,h)
+# #             roi_MXIF(sample_id,marker, 5028,3480,7956,5292)
+# # #             crop256_MXIF('GCA002ACB', 7956, 5292)
+# #             crop256_MXIF(sample_id,marker, 7956, 5292)
 
-nested_dict2 = {'GCA003TIB': {'x_size':0.3243145161290323 ,'y_size':0.32412004992079874,'x':96,'y':640,'w':8320,'h':12144}}
-preprocess_ALL(sample_list,marker_list)
-
+#         patch_size = 256
+#         split_MXIF(sample_id,patch_size, marker_list)

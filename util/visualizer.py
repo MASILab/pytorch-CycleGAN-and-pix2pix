@@ -38,7 +38,23 @@ def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, use_w
     ims, txts, links = [], [], []
     ims_dict = {}
     for label, im_data in visuals.items():
-        im = util.tensor2im(im_data)
+        print('########3')
+        print(list(im_data.size()))
+        
+        print('########3')
+        
+        img_size = int(list(im_data.size())[1])
+        if img_size == 3:        
+            im = util.tensor2im(im_data)
+        elif img_size == 27:
+            im = util.tensor2markers(im_data)
+        else:
+            print('SHOULD NOT POSSIBLE???')
+        
+        
+        
+###############        im = util.tensor2im(im_data)
+        
         image_name = '%s_%s.png' % (name, label)
         save_path = os.path.join(image_dir, image_name)
         util.save_image(im, save_path, aspect_ratio=aspect_ratio)
@@ -119,7 +135,8 @@ class Visualizer():
             epoch (int) - - the current epoch
             save_result (bool) - - if save the current results to an HTML file
         """
-        if self.display_id > 0:  # show images in the browser using visdom
+        # Shunxing edited only plot a 3 channel image
+        if self.display_id < 0:
             ncols = self.ncols
             if ncols > 0:        # show all the images in one visdom panel
                 ncols = min(ncols, len(visuals))
@@ -150,6 +167,7 @@ class Visualizer():
                 if label_html_row != '':
                     label_html += '<tr>%s</tr>' % label_html_row
                 try:
+                
                     self.vis.images(images, nrow=ncols, win=self.display_id + 1,
                                     padding=2, opts=dict(title=title + ' images'))
                     label_html = '<table>%s</table>' % label_html
@@ -162,7 +180,19 @@ class Visualizer():
                 idx = 1
                 try:
                     for label, image in visuals.items():
-                        image_numpy = util.tensor2im(image)
+                        img_size = int(list(image.size())[1])
+                        
+                        if img_size == 3:
+                            image_numpy = util.tensor2im(image)
+                        elif img_size == 27:
+                            image_numpy = util.tensor2markers2Web(image)
+                        else:
+                            print('SHOULD IMPOSSIBLE???')
+                        
+                        
+                        
+                        
+                        
                         self.vis.image(image_numpy.transpose([2, 0, 1]), opts=dict(title=label),
                                        win=self.display_id + idx)
                         idx += 1
@@ -191,7 +221,13 @@ class Visualizer():
             self.saved = True
             # save images to the disk
             for label, image in visuals.items():
-                image_numpy = util.tensor2im(image)
+                img_size = int(list(image.size())[1])
+                if img_size == 3:        
+                    image_numpy = util.tensor2im(image)
+                elif img_size == 27:
+                    image_numpy = util.tensor2markersDetach(image)
+                else:
+                    print('SHOULD NOT POSSIBLE???')
                 img_path = os.path.join(self.img_dir, 'epoch%.3d_%s.png' % (epoch, label))
                 util.save_image(image_numpy, img_path)
 
@@ -202,7 +238,13 @@ class Visualizer():
                 ims, txts, links = [], [], []
 
                 for label, image_numpy in visuals.items():
-                    image_numpy = util.tensor2im(image)
+                    img_size = int(list(image.size())[1])
+                    if img_size == 3:        
+                        image_numpy = util.tensor2im(image)
+                    elif img_size == 27:
+                        image_numpy = util.tensor2markers(image)
+                    else:
+                        print('SHOULD NOT POSSIBLE???')
                     img_path = 'epoch%.3d_%s.png' % (n, label)
                     ims.append(img_path)
                     txts.append(label)

@@ -58,15 +58,29 @@ class UnalignedDataset(BaseDataset):
         else:   # randomize the index for domain B to avoid fixed pairs.
             index_B = random.randint(0, self.B_size - 1)
         B_path = self.B_paths[index_B]
-        A_img = Image.open(A_path).convert('RGB')
+        A_img = Image.open(A_path)#.convert('RGB')
         B_img = Image.open(B_path).convert('RGB')
-
         
         # apply image transformation
-        A = self.transform_A(A_img)
+        #A = self.transform_A(A_img)
         B = self.transform_B(B_img)
+       
+        X = []
+        total_marker = 27
+        for i in range(0, total_marker):
+            A_tmp = A_img.crop((i * 256, 0, i * 256 + 256, 256))
+            A_tmp = self.transform_grayscale(A_tmp)
+            X.append(A_tmp)
+            
 
-        return {'A': A, 'B': B, 'A_paths': A_path, 'B_paths': B_path}
+        A_tensor = None
+        # for i in range(29):
+        for i in range(0, 27):
+            if A_tensor is None:
+                A_tensor = X[i]
+            else:
+                A_tensor = torch.cat((A_tensor, X[i]), 0)
+        return {'A': A_tensor, 'B': B, 'A_paths': A_path, 'B_paths': B_path}
 
     def __len__(self):
         """Return the total number of images in the dataset.
