@@ -1,0 +1,6 @@
+================ Training Loss (Sat Sep 10 23:28:18 2022) ================
+================ Training Loss (Sat Sep 10 23:32:07 2022) ================
+================ Training Loss (Sat Sep 10 23:32:52 2022) ================
+(epoch: 1, iters: 100, time: 0.178, data: 0.853) D_A: 0.543 G_A: 0.431 cycle_A: 0.990 idt_A: 0.000 D_B: 0.727 G_B: 0.325 cycle_B: 2.288 idt_B: 0.000 
+================ Training Loss (Sat Sep 10 23:35:50 2022) ================
+(epoch: 1, iters: 100, time: 0.153, data: 0.906) D_A: 0.551 G_A: 0.558 cycle_A: 1.040 idt_A: 0.000 D_B: 0.736 G_B: 0.446 cycle_B: 2.723 idt_B: 0.000 

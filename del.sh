@@ -1,121 +1,119 @@
-rm checkpoints/mxif2he_v2/latest_net_G.pth
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth
+cd checkpoints/mxifAll2he/
 ln -s 200_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/200/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/200/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 190_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/190/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/190/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 180_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/180/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/180/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 170_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/170/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/170/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 160_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/160/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/160/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 150_net_G_A.pth latest_net_G.pth
 cd ../../ 
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/150/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/150/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 140_net_G_A.pth latest_net_G.pth
 cd ../../ 
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/140/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/140/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 130_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/130/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/130/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 120_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/120/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/120/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 110_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/110/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/110/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 100_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/100/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/100/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth
+cd checkpoints/mxifAll2he/
 ln -s 90_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/90/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/90/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 80_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/80/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/80/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 70_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/70/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/70/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 60_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/60/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/60/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 50_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/50/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/50/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 40_net_G_A.pth latest_net_G.pth
 cd ../../ 
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/40/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/40/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 30_net_G_A.pth latest_net_G.pth
 cd ../../ 
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/30/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/30/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 20_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/20/
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/20/
 
-rm checkpoints/mxif2he_v2/latest_net_G.pth 
-cd checkpoints/mxif2he_v2/
+rm checkpoints/mxifAll2he/latest_net_G.pth 
+cd checkpoints/mxifAll2he/
 ln -s 10_net_G_A.pth latest_net_G.pth
 cd ../../
-python test.py --dataroot datasets/mxif2he/testA --name mxif2he_v2 --model test --no_dropout --results_dir ./results/mxif2he_v2/10/
-
-
+python test.py --dataroot datasets/mxifAll2he/testA --name mxifAll2he --model test --no_dropout --results_dir ./results/mxifAll2he/10/

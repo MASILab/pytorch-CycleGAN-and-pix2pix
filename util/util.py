@@ -38,7 +38,7 @@ def tensor2markers(image_tensor, imtype=np.uint8):
     image_numpy = np.clip(image_numpy, 0, 255)
 
     to_print = []
-    for i in range(0,27):
+    for i in range(0,len(image_numpy[0,0,:])): #27 for all channel
         to_print.append(image_numpy[:,:,i])
 
     final_hope_markers = np.hstack(to_print)
@@ -54,7 +54,7 @@ def tensor2markersDetach(image_tensor, imtype=np.uint8):
     image_numpy = np.clip(image_numpy, 0, 255)
 
     to_print = []
-    for i in range(0,27):
+    for i in range(0,len(image_numpy[0,0,:])):#27):
         to_print.append(image_numpy[:,:,i])
 
     final_hope_markers = np.hstack(to_print)
@@ -106,7 +106,7 @@ def save_image(image_numpy, image_path, aspect_ratio=1.0):
 
     image_pil = Image.fromarray(image_numpy)
     
-    print(image_numpy.shape)
+#    print(image_numpy.shape)
     
     if len(image_numpy.shape) == 2:
         h, w = image_numpy.shape

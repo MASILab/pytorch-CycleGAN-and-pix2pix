@@ -1,5 +1,5 @@
 import os
-from data.base_dataset import BaseDataset, get_transform, get_transform_no_data_aug
+from data.base_dataset import BaseDataset, get_transform
 from data.image_folder import make_dataset
 from PIL import Image
 import random
@@ -37,7 +37,7 @@ class UnalignedDataset(BaseDataset):
         output_nc = self.opt.input_nc if btoA else self.opt.output_nc      # get the number of channels of output image
         self.transform_A = get_transform(self.opt, grayscale=(input_nc == 1))
         self.transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
-        self.transform_grayscale = get_transform_no_data_aug(self.opt, grayscale=True)
+        self.transform_grayscale = get_transform(self.opt, grayscale=True)
 
     def __getitem__(self, index):
         """Return a data point and its metadata information.
@@ -61,64 +61,21 @@ class UnalignedDataset(BaseDataset):
         A_img = Image.open(A_path)#.convert('RGB')
         B_img = Image.open(B_path).convert('RGB')
         
-        # B is H&E and there is no need for random consistency
-
-        seed_B = np.random.randint(2147483647)
-        random.seed(seed_B)
-        torch.manual_seed(seed_B)
-        transform_B_fix_seed = get_transform(self.opt, grayscale=True) # get custom
-        B = transform_B_fix_seed(B_img)
-        # print('##########')
-        # # print(B.shape)
-
-        # # s_1 = np.random.randint(2147483647)
-        # random.seed(s_1)
-        # torch.manual_seed(s_1)
-        # transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
-        # B1 = transform_B(B_img)
-
-        # xxx = torch.eq(B, B1)
-        # print(torch.unique(xxx))
-        # print('##########')
-
-        # deld = B.cpu().float().numpy()
-        
-        # deld = (np.transpose(deld, (1, 2, 0)) + 1) / 2.0 * 255.0
-        # print(deld.shape)
-        # B_arr = np.asarray(B_img)
-        # img_s  = []
-        # img_s.append(B_arr)
-        # img_s.append(deld)
-        # img_stack = np.vstack(img_s)
-        # # B_img.save("%s_before.png" % s_1)
-        # cv2.imwrite("%s.png" % s_1,img_stack)
-        # image_pil = Image.fromarray(deld)
-        # image_pil.save("%s.png" % s_1)
-
         # apply image transformation
         #A = self.transform_A(A_img)
-        # B = self.transform_B(B_img)
-        seed_A = np.random.randint(2147483647)
-        random.seed(seed_A)
-        torch.manual_seed(seed_A)
-        transform_A_fix_seed = get_transform(self.opt, grayscale=True) # get custom
-
+        B = self.transform_B(B_img)
+       
         X = []
         total_marker = 27
-        #contain_list = [0,2,11,12,15,17,18,20,22,24,26] #remove muc2
-        #contain_list = [0,2,11,12,15,18,20,22,24,26]
         for i in range(0, total_marker):
-            # select only 11 markers
-        #    if i in contain_list:
             A_tmp = A_img.crop((i * 256, 0, i * 256 + 256, 256))
-            # A_tmp = self.transform_grayscale(A_tmp)
-            A_tmp = transform_A_fix_seed(A_tmp)
+            A_tmp = self.transform_grayscale(A_tmp)
             X.append(A_tmp)
-        
+            
+
         A_tensor = None
         # for i in range(29):
         for i in range(0, 27):
-        # for i in range(0, len(contain_list)):
             if A_tensor is None:
                 A_tensor = X[i]
             else:

@@ -28,6 +28,7 @@ class BaseDataset(data.Dataset, ABC):
         """
         self.opt = opt
         self.root = opt.dataroot
+        
 
     @staticmethod
     def modify_commandline_options(parser, is_train):
@@ -40,15 +41,18 @@ class BaseDataset(data.Dataset, ABC):
         Returns:
             the modified parser.
         """
+        
         return parser
 
     @abstractmethod
     def __len__(self):
+        
         """Return the total number of images in the dataset."""
         return 0
 
     @abstractmethod
     def __getitem__(self, index):
+        
         """Return a data point and its metadata information.
 
         Parameters:
@@ -74,7 +78,6 @@ def get_params(opt, size):
     y = random.randint(0, np.maximum(0, new_h - opt.crop_size))
 
     flip = random.random() > 0.5
-
     return {'crop_pos': (x, y), 'flip': flip}
 
 
@@ -100,19 +103,63 @@ def get_transform(opt, params=None, grayscale=False, method=transforms.Interpola
     if not opt.no_flip:
         if params is None:
             transform_list.append(transforms.RandomHorizontalFlip())
+
         elif params['flip']:
             transform_list.append(transforms.Lambda(lambda img: __flip(img, params['flip'])))
 
+    # for affine
+    # transform_list.append(transforms.RandomAffine((-30,+30),fill=255))
+    
     if convert:
         transform_list += [transforms.ToTensor()]
         if grayscale:
             transform_list += [transforms.Normalize((0.5,), (0.5,))]
         else:
             transform_list += [transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    
+    # print(transform_list)
+    return transforms.Compose(transform_list)
+
+def get_transform_no_data_aug(opt, params=None, grayscale=False, method=transforms.InterpolationMode.BICUBIC, convert=True):
+    transform_list = []
+    if grayscale:
+        transform_list.append(transforms.Grayscale(1))
+    # if 'resize' in opt.preprocess:
+    #     osize = [opt.load_size, opt.load_size]
+    #     transform_list.append(transforms.Resize(osize, method))
+    # elif 'scale_width' in opt.preprocess:
+    #     transform_list.append(transforms.Lambda(lambda img: __scale_width(img, opt.load_size, opt.crop_size, method)))
+
+    # if 'crop' in opt.preprocess:
+    #     if params is None:
+    #         transform_list.append(transforms.RandomCrop(opt.crop_size))
+    #     else:
+    #         transform_list.append(transforms.Lambda(lambda img: __crop(img, params['crop_pos'], opt.crop_size)))
+
+    # if opt.preprocess == 'none':
+    #     transform_list.append(transforms.Lambda(lambda img: __make_power_2(img, base=4, method=method)))
+
+    # if not opt.no_flip:
+    #     if params is None:
+    #         transform_list.append(transforms.RandomHorizontalFlip())
+
+    #     elif params['flip']:
+    #         transform_list.append(transforms.Lambda(lambda img: __flip(img, params['flip'])))
+
+    
+    if convert:
+        transform_list += [transforms.ToTensor()]
+        if grayscale:
+            transform_list += [transforms.Normalize((0.5,), (0.5,))]
+        else:
+            transform_list += [transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+
+    print(transform_list)
     return transforms.Compose(transform_list)
 
 
 def __make_power_2(img, base, method=transforms.InterpolationMode.BICUBIC):
+    
     ow, oh = img.size
     h = int(round(oh / base) * base)
     w = int(round(ow / base) * base)
@@ -124,6 +171,7 @@ def __make_power_2(img, base, method=transforms.InterpolationMode.BICUBIC):
 
 
 def __scale_width(img, target_size, crop_size, method=transforms.InterpolationMode.BICUBIC):
+    
     ow, oh = img.size
     if ow == target_size and oh >= crop_size:
         return img
@@ -133,21 +181,25 @@ def __scale_width(img, target_size, crop_size, method=transforms.InterpolationMo
 
 
 def __crop(img, pos, size):
+    
     ow, oh = img.size
     x1, y1 = pos
     tw = th = size
+
     if (ow > tw or oh > th):
         return img.crop((x1, y1, x1 + tw, y1 + th))
     return img
 
 
 def __flip(img, flip):
+    
     if flip:
         return img.transpose(Image.FLIP_LEFT_RIGHT)
     return img
 
 
 def __print_size_warning(ow, oh, w, h):
+    
     """Print warning information about image size(only print once)"""
     if not hasattr(__print_size_warning, 'has_printed'):
         print("The image size needs to be a multiple of 4. "
