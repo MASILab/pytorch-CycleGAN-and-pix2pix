@@ -81,7 +81,7 @@ def get_params(opt, size):
     return {'crop_pos': (x, y), 'flip': flip}
 
 
-def get_transform(opt, params=None, grayscale=False, method=transforms.InterpolationMode.BICUBIC, convert=True):
+def get_transform(opt, params=None, grayscale=False, method=transforms.InterpolationMode.BICUBIC, convert=True, curImgIsHE=False):
     transform_list = []
     if grayscale:
         transform_list.append(transforms.Grayscale(1))
@@ -109,6 +109,9 @@ def get_transform(opt, params=None, grayscale=False, method=transforms.Interpola
 
     # for affine
     # transform_list.append(transforms.RandomAffine((-30,+30),fill=255))
+    # print(curImgIsHE)
+    if curImgIsHE:
+        transform_list.append(transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.05, hue=0.01))
     
     if convert:
         transform_list += [transforms.ToTensor()]

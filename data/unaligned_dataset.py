@@ -39,6 +39,14 @@ class UnalignedDataset(BaseDataset):
         self.transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
         self.transform_grayscale = get_transform_no_data_aug(self.opt, grayscale=True)
 
+    def reset_random_seed(self, random_seed):
+        torch.manual_seed(random_seed)
+        torch.cuda.manual_seed(random_seed)
+        # torch.backends.cudnn.deterministic = True
+        # torch.backends.cudnn.benchmark = False
+        random.seed(random_seed)
+        np.random.seed(random_seed)
+
     def __getitem__(self, index):
         """Return a data point and its metadata information.
 
@@ -60,37 +68,43 @@ class UnalignedDataset(BaseDataset):
         B_path = self.B_paths[index_B]
         A_img = Image.open(A_path)#.convert('RGB')
         B_img = Image.open(B_path).convert('RGB')
+        # print(B_path)
         
         # B is H&E and there is no need for random consistency
 
+        seed_A = np.random.randint(2147483647)
         seed_B = np.random.randint(2147483647)
-        random.seed(seed_B)
-        torch.manual_seed(seed_B)
-        transform_B_fix_seed = get_transform(self.opt, grayscale=True) # get custom
+
+        transform_B_fix_seed = get_transform(self.opt, grayscale=False, curImgIsHE = True) # get custom
+        self.reset_random_seed(seed_B)
         B = transform_B_fix_seed(B_img)
-        # print('##########')
-        # # print(B.shape)
+        # self.reset_random_seed(seed_B)
+        # B1 = transform_B_fix_seed(B_img)
+        # # print('##########')
+        # # # print(B.shape)
 
-        # # s_1 = np.random.randint(2147483647)
-        # random.seed(s_1)
-        # torch.manual_seed(s_1)
-        # transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
-        # B1 = transform_B(B_img)
-
+        # s_1 = np.random.randint(2147483647)
+        # # random.seed(s_1)
+        # # torch.manual_seed(s_1)
+        # # transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
+        # # B1 = transform_B(B_img)
+  
         # xxx = torch.eq(B, B1)
         # print(torch.unique(xxx))
         # print('##########')
 
         # deld = B.cpu().float().numpy()
-        
         # deld = (np.transpose(deld, (1, 2, 0)) + 1) / 2.0 * 255.0
-        # print(deld.shape)
+        # # print(deld.shape)
         # B_arr = np.asarray(B_img)
         # img_s  = []
         # img_s.append(B_arr)
         # img_s.append(deld)
         # img_stack = np.vstack(img_s)
+        # cv2.imwrite('%s_before.png' % s_1,B_arr)
+        # cv2.imwrite('%s_after.png' % s_1,deld)
         # # B_img.save("%s_before.png" % s_1)
+
         # cv2.imwrite("%s.png" % s_1,img_stack)
         # image_pil = Image.fromarray(deld)
         # image_pil.save("%s.png" % s_1)
@@ -98,9 +112,7 @@ class UnalignedDataset(BaseDataset):
         # apply image transformation
         #A = self.transform_A(A_img)
         # B = self.transform_B(B_img)
-        seed_A = np.random.randint(2147483647)
-        random.seed(seed_A)
-        torch.manual_seed(seed_A)
+        
         transform_A_fix_seed = get_transform(self.opt, grayscale=True) # get custom
 
         X = []
@@ -111,8 +123,17 @@ class UnalignedDataset(BaseDataset):
             # select only 11 markers
         #    if i in contain_list:
             A_tmp = A_img.crop((i * 256, 0, i * 256 + 256, 256))
-            # A_tmp = self.transform_grayscale(A_tmp)
+            self.reset_random_seed(seed_A)
             A_tmp = transform_A_fix_seed(A_tmp)
+            
+            # A_tmp1 = transform_A_fix_seed(A_tmp)
+            # self.reset_random_seed(seed_A)
+            # A_tmp2 = transform_A_fix_seed(A_tmp)
+
+            # xxx = torch.eq(A_tmp1, A_tmp2)
+            # print(torch.unique(xxx))
+
+            # print()
             X.append(A_tmp)
         
         A_tensor = None
