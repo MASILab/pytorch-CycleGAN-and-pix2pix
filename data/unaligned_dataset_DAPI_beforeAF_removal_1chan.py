@@ -116,10 +116,10 @@ class UnalignedDataset(BaseDataset):
         transform_A_fix_seed = get_transform(self.opt, grayscale=True) # get custom
 
         X = []
-        total_marker = 3 # for AF related only 27
+        total_marker = 4 # for AF related only 27
         #contain_list = [0,2,11,12,15,17,18,20,22,24,26] #remove muc2
         #contain_list = [0,2,11,12,15,18,20,22,24,26]
-        contain_list = [0,1]
+        contain_list = [1]
         for i in range(0, total_marker):
             # select only 11 markers
             if i in contain_list:

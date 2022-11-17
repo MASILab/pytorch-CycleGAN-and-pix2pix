@@ -41,7 +41,7 @@ def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, use_w
         img_size = int(list(im_data.size())[1])
         if img_size == 3:        
             im = util.tensor2im(im_data)
-        elif img_size == 27 or img_size == 11 or img_size == 10:
+        elif img_size == 27 or img_size == 11 or img_size == 10 or img_size == 4 or img_size == 1 or img_size == 2:
             im = util.tensor2markers(im_data)
         else:
             print('SHOULD NOT POSSIBLE???')
@@ -178,7 +178,7 @@ class Visualizer():
                         print('######')
                         if img_size == 3:
                             image_numpy = util.tensor2im(image)
-                        elif img_size == 27 or img_size == 11 or img_size == 10:
+                        elif img_size == 27 or img_size == 11 or img_size == 10 or img_size == 4 or img_size == 1 or img_size == 2:
                             image_numpy = util.tensor2markers2Web(image)
                         else:
                             print('SHOULD IMPOSSIBLE???')
@@ -218,7 +218,7 @@ class Visualizer():
                 img_size = int(list(image.size())[1])
                 if img_size == 3:        
                     image_numpy = util.tensor2im(image)
-                elif img_size == 27 or img_size == 11 or img_size == 10:
+                elif img_size == 27 or img_size == 11 or img_size == 10 or img_size == 4 or img_size == 1 or img_size == 2:
                     image_numpy = util.tensor2markersDetach(image)
                 else:
                     print('SHOULD NOT POSSIBLE???')
@@ -235,7 +235,7 @@ class Visualizer():
                     img_size = int(list(image.size())[1])
                     if img_size == 3:        
                         image_numpy = util.tensor2im(image)
-                    elif img_size == 27 or img_size == 11 or img_size == 10:
+                    elif img_size == 27 or img_size == 11 or img_size == 10 or img_size == 4 or img_size == 1 or img_size == 2:
                         image_numpy = util.tensor2markers(image)
                     else:
                         print('SHOULD NOT POSSIBLE???')

@@ -116,31 +116,30 @@ class UnalignedDataset(BaseDataset):
         transform_A_fix_seed = get_transform(self.opt, grayscale=True) # get custom
 
         X = []
-        total_marker = 3 # for AF related only 27
+        total_marker = 4 # for AF related only 27
         #contain_list = [0,2,11,12,15,17,18,20,22,24,26] #remove muc2
         #contain_list = [0,2,11,12,15,18,20,22,24,26]
-        contain_list = [0,1]
         for i in range(0, total_marker):
             # select only 11 markers
-            if i in contain_list:
-                A_tmp = A_img.crop((i * 256, 0, i * 256 + 256, 256))
-                self.reset_random_seed(seed_A)
-                A_tmp = transform_A_fix_seed(A_tmp)
-                
-                # A_tmp1 = transform_A_fix_seed(A_tmp)
-                # self.reset_random_seed(seed_A)
-                # A_tmp2 = transform_A_fix_seed(A_tmp)
+        #    if i in contain_list:
+            A_tmp = A_img.crop((i * 256, 0, i * 256 + 256, 256))
+            self.reset_random_seed(seed_A)
+            A_tmp = transform_A_fix_seed(A_tmp)
+            
+            # A_tmp1 = transform_A_fix_seed(A_tmp)
+            # self.reset_random_seed(seed_A)
+            # A_tmp2 = transform_A_fix_seed(A_tmp)
 
-                # xxx = torch.eq(A_tmp1, A_tmp2)
-                # print(torch.unique(xxx))
+            # xxx = torch.eq(A_tmp1, A_tmp2)
+            # print(torch.unique(xxx))
 
-                # print()
-                X.append(A_tmp)
+            # print()
+            X.append(A_tmp)
         
         A_tensor = None
         # for i in range(29):
-        ####################for i in range(0, total_marker):  #27):
-        for i in range(0, len(contain_list)):
+        for i in range(0, total_marker):  #27):
+        # for i in range(0, len(contain_list)):
             if A_tensor is None:
                 A_tensor = X[i]
             else:
